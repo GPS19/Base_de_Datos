@@ -1,5 +1,5 @@
 
--- USE classicmodels; 
+USE classicmodels; 
 
 -- Pregunta 2
 
@@ -64,7 +64,15 @@
 -- INNER JOIN orders
 -- using(customerNumber)
 -- LEFT JOIN payments
--- using(customerNumber);  -> MAAAAAL
+-- using(customerNumber);
 
 
--- WHERE customers.salesRepEmployeeNumber is not null; 
+-- Pregunta 9
+
+-- select CONCAT(employees.LastName, " ", employees.firstName) AS "name", SUM(payments.amount) AS "payments" FROM employees
+-- JOIN customers
+-- ON employees.employeeNumber = customers.salesRepEmployeeNumber
+-- JOIN payments
+-- using (customerNumber)
+-- group by name;
+
