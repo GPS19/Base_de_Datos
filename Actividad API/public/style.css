@@ -1,0 +1,49 @@
+*{
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+div{
+    padding: 1em; 
+    border: 1px solid black; 
+
+}
+
+#layout{
+    height: 100vh; 
+    border: 1px solid black; 
+    padding: 1em; 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    row-gap: 0.2em; 
+
+    grid-template-areas: 
+    "agregar"
+    "ver"
+    "modif"
+    "borrar"
+}
+
+#agregar, 
+#ver, 
+#modificar, 
+#borrar{
+    place-items: center;
+}
+
+#agregar{
+    grid-area: agregar;
+}
+
+#ver{
+    grid-area: ver; 
+}
+
+#modificar{
+    grid-area: modif; 
+}
+
+#borrar{
+    grid-area: borrar; 
+}
