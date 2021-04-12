@@ -17,7 +17,7 @@ connection.connect(function(err) { // Verifying we are connected
 
 
 var data = []
-for(let i = 0; i < 532; i++){
+for(let i = 0; i < 15; i++){
     data.push([faker.name.firstName(), faker.name.lastName(), faker.internet.email()]); // Inserting data with the faker package
 }
 
