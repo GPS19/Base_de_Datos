@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="UTF-8">
+        <title>Actividad API</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <script src="/script.js"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body onload="main()">
+        <div id="layout">
+            <div id="preguntas">
+                <div id="one">
+                    <h2>¿Qué es un api?</h2>
+                    <p>Una API (interfaz de programación de aplicaciones),  se refiere a cualquier software que permite que 2 piezas de código se comuniquen entre ellos y puedan intercambiar datos. 
+
+                        Se puede utilizar para definir las solicitudes que se han hecho, manejar la lógica de negocio, los y gestionar los formatos de datos que se deben utilizar y las convenciones a las que adherirse cuando se construyen productos de software.</p>
+                </div>
+                <div id="two">
+                    <h2>¿Qué es un REST API</h2>
+                    <p>Existen varios tipos de especificaciones API, Representational State Transfer (REST) es un estilo de arquitectura que proporciona estándares en la web entre sistemas que facilitan el flujo de comunicación dentro de las aplicaciones. 
+
+                        REST es, en términos sencillos, un conjunto de reglas que los desarrolladores utilizan al diseñar aplicaciones web que se comunican a través de una red. Una de estas reglas establece que se debe poder obtener un dato (llamado recurso) cuando se enlaza con una URL específica.
+                        
+                        Las APIs REST no tienen estado y pueden utilizarse para separar las preocupaciones entre el cliente y el servidor.
+                        
+                        Si un sistema viola alguna regla del estándar REST, no puede ser considerado como RESTful. Uno de los formatos de datos más populares utilizados con las APIs REST es el formato JSON.</p>
+                </div>
+                <div id="three">
+                    <h2>Menciona 3 beneficios de REST APIs</h2>
+                    <p>
+                        Las APIs facilitan el acceso a diversos recursos. También permiten la comunicación entre plataformas, lo que resuelve cierta lógica de negocio.<br><br>
+                    <ol id="three-list">
+                    <li>Son simples y estandarizados, no hay que preocuparse por formatear la información o las solicitudes. </li>
+                    <li>Son escalables y sin estado, no se almacena información del cliente entre peticiones y cada petición debe ser independiente. </li>
+                    <li>Tienen un alto rendimiento porque son cacheables.
+                    </ol></li>
+                    </p>
+                </div>
+                <div id="four">
+                    <h2>¿Cómo funciona un REST API? Menciona qué es y cómo funciona un request, un response, y CRUD.
+                    </h2>
+                    <p>
+                        Una REST API organiza los recursos en URLs, o mejor dicho URIs que son únicos, esto es para diferenciar entre tipos de recursos de datos en un servidor. <br><br>
+
+                        <h3>Ciclo Request-Response: </h3><br>
+                        
+                        Un cliente puede obtener datos sobre un recurso haciendo una petición a través de http, el mensaje de petición tiene un formato muy específico y lo más importante es que la línea de inicio contiene la URI a la que se desea acceder la cual está precedida por un verbo http o método de petición que señala su intención con el recurso.<br><br>
+                        
+                        Primero hay una llamada al API que se implementan como peticiones HTTP en las que la URL representa el recurso: http://www.formandome.es/api/cursos/1 <br>
+		                El método (HTTP Verbs) representa la operación: GET http://www.formandome.es/api/cursos/1 <br><br>
+                        <ul id="four-list">
+                            <li>GET (READ) - Leer un recurso </li>
+                            <li>POST (CREATE) - Crear un nuevo recurso </li>
+                            <li>PUT (UPDATE) - Actualizar</li>
+                            <li>DELETE (DELETE) - Destruir </li>
+                        </ul>
+                        <br>
+                        Después de la línea de inicio hay headers o cabeceras que contienen metadatos sobre la solicitud. La cabecera accept puede indicar al servidor que quiere los datos en un formato específico o se puede utilizar la cabecera authorization para decirle al servidor que se está autorizado para hacer petición (request). <br><br>
+
+                        A continuación se encuentra el cuerpo que contiene una carga útil personalizada de datos.  <br><br>
+
+                        El servidor recibirá el mensaje de solicitud y luego ejecutará algún código generalmente para leer de una base de datos que luego puede ser formateado en un mensaje de respuesta. La parte superior del mensaje contiene un código de estado para decirle al cliente lo que ha pasado con su solicitud, los códigos en el nivel 200 significan que las cosas fueron bien, en el nivel 400 significa que algo estaba mal con la solicitud y en el nivel 500 significa que el servidor falló. 
+                        <br><br>
+                        Después del código de estado tenemos las cabeceras de la respuesta, que contienen información sobre el servidor, seguidas por el cuerpo de la respuesta, que contiene la carga de datos y suele estar formateada en JSON. 
+                        <br>
+                    </p>
+                </div>
+                <div id="five">
+                    <h2>¿Qué es NodeJS?</h2>
+                    <p>
+                        Node.Js es un entorno de ejecución para JavaScript, está diseñado para crear aplicaciones network escalables y funciona en varias plataformas (Windows, Linux, Unix, Mac OS X, etc.). <br><br>
+
+                        Node.js puede generar contenido dinámico de páginas, puede crear, abrir, leer, escribir, borrar y cerrar archivos en el servidor, puede recoger datos de formularios, puede añadir, borrar y modificar datos en una base de datos. <br><br>
+
+                        Los archivos Node.js contienen tareas que se ejecutarán en ciertos eventos. Un evento típico es que alguien intente acceder a un puerto en el servidor. 
+                    </p>
+                </div>
+                <div id="six">
+                    <h2>¿Qué es un callback?</h2>
+                    <p>
+                        Es una función que será ejecutada cuando una operación asíncrona se haya completado. Normalmente, éste se pasa como el último argumento de la función. Es una buena práctica hacerlo de esta manera.<br><br>
+                        <pre>
+
+                            const fs = requiere(“fs”); 
+                            const filePath = “./users.json”
+
+                            fs.readFile(filePath, function onReadFile(err, result){
+                                if(err){
+                                    console.log(“Hubo un error ” + err)
+                                    return 
+                                }
+                                console.log(“El archivo fue leído con éxito: ” + result)
+                            }); 
+                        </pre>
+                        <br>
+                        En el código de arriba, estamos utilizando una librería de Nodejs para poder hacer operaciones en nuestro sistema de archivos. En este ejemplo, hacemos uso de la función readFile, el cual sirve para poder leer un archivo. Esta función recibe dos parámetros (la ruta del archivo y el callback). Como podemos darnos cuenta el callback que tiene por nombre onReadFile, se encuentra como último parámetro. Finalmente, ese callback se ejecutará hasta que nuestro código termine de leer el archivo solicitado. Javascript seguirá ejecutando código durante este proceso en caso de que exista.
+                    </p>
+                </div>
+                <div id="seven">
+                    <h2>¿Qué es NPM?</h2>
+                    <p>
+                        Node Package Manager es un gestor de paquetes desarrollado en su totalidad bajo el lenguaje JavaScript, a través del cual podemos obtener cualquier librería con tan solo una sencilla línea de código, lo cual nos permitirá agregar dependencias de forma simple, distribuir paquetes y administrar eficazmente tanto los módulos como el proyecto a desarrollar en general.
+
+                    </p>
+                </div>
+                <div id="eight">
+                    <h2>¿Cómo se instal, desinstala y actualizan paquets con npm?</h2>
+                    <h3>Instalación</h3>
+                    <p>
+                        Con npm puedes instalar un paquete  de forma <strong>local</strong> (en una carpeta) o <strong>global</strong><br>
+                        Para instalar un paquete de forma local utiliza el comando npm install seguido del nombre del paquete. npm crea una carpeta llamada node_modules en la carpeta donde estés ubicado(a), y ahí instala el paquete.<br><br>
+                        <pre>
+
+                            npm install faker
+                        </pre> <br>
+                        Instalar un paquete de forma <strong>global</strong> es similar a instalar uno local, la única diferencia es que se debe agregar la opción -g al comando npm install.<br><br>
+                        <pre>
+
+                            npm install -g learnyounode
+                        </pre><br>
+                        Para instalar las dependas y agregarlos al package.json agregamos —save a nuestro comando de la siguiente forma:<br><br>
+                        <pre>
+
+                            npm install —save faker
+                        </pre><br>
+                    </p>
+                    
+                    <h3>Desinstalación</h3>
+                    <p>
+                        Para desinstalar dependencias y eliminarlos de package.json<br><br>
+                        <pre>
+
+                            npm rm --save colors
+                        </pre><br>
+                    </p>
+
+                    <h3>Actualización</h3>
+                    <p>
+                        Podemos utilizar una dependencia llamada npm-check-updates, se encargará de checkear nuestros paquetes y comprobar sus versiones vs su última versión.<br>
+                        <pre>
+
+                            npm install -g npm-check-updates
+                        </pre> <br>
+                        A partir de ese momento dispondremos de un comando global. Si queremos actualizarlas utilizamos el siguiente comando: <br><br>
+                        <pre>
+
+                            ncu -u
+                        </pre>
+
+
+                    </p>
+                </div>
+                <div id="nine">
+                    <h2>¿Qué es el package.json?</h2>
+                    <p>
+                        El archivo package.json es la definición del archivo. Algunos elementos que contiene son:<br><br>
+                        <ul id="nine-list">
+                            <li>name: Nombre del proyecto, librería o paquete.</li>                                                    
+                            <li>version: Versión del paquete.</li>
+                            <li>description: Descripción breve del paquete o proyecto.</li>
+                            <li>main: Punto de entrada del proyecto. Suele ser index.js (node) o index.html (browser).</li>
+                            <li>module: Idem al anterior, pero respecto a ES Modules en lugar de CommonJS. scripts: Colección de scripts del proyecto.</li>
+                            <li>keywords: Palabras clave relacionadas con el proyecto. Util en búsquedas. author: Nombre del autor del paquete.</li>
+                            <li>license: Tipo de licencia del paquete o proyecto.</li>
+                            <li>dependencies: Colección de paquetes para producción y la versión instalada. homepage: URL de la página principal del paquete.</li>
+                            <li>repository: URL del repositorio. Se debe indicar type (git, svn...) y url (ruta).</li>
+                            <li>bugs: Objeto con campo url con la URL de la página de issues del proyecto.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div id="ten">
+                    <h2>¿Qué es JSON?</h2>
+                    <p>JSON (JavaScript Object Notation) es un formato de texto, fácil de leer y
+                        escribir para los programadores, donde se almecena información con la sintaxis de objetos en javascript.<br></p>
+                </div>
+                <div id="eleven">
+                    <h2>¿Qué es un módulo?</h2>
+                    <p>
+                        La gran diferencia entre Javascript y node.js es el concepto del modulo. Manejar diferentes archivos o librerías con un conjunto de objetos, funciones o variables que utilizaremos en nuestra aplicación.<br>
+                    </p>
+                </div>
+                <div id="twelve">
+                    <h2>Describe el event loop de NodeJS</h2>
+                    <p>
+                    Esta es la principal característica de que hizo tan poderoso a NodeJS,
+                    permitiendo que sea asincrónico y no deja que la aplicación muera a la hora de que una pagina web tenga bucles infinitos no ocasione que el navegador se bloquee.<br><br>
+                    La pila de llamadas es una pila LIFO (Last In, First Out).<br>
+                    El bucle de eventos comprueba continuamente la pila de llamadas para ver si hay alguna función que deba ejecutarse.<br>
+                    Mientras lo hace, agrega cualquier llamada de función que encuentre a la pila de llamadas y ejecuta cada una en orden.
+                    </p>
+                    
+                </div>
+    
+            </div>
+            <div id="funciones">
+                <div id="agregar">
+                    <h2>Agregar Usuarios</h2>
+                    <form id="form-agregar">
+                        <input type="text"  name="nombre" id="nombre" placeholder="Ingresa tu nombre" required>
+                        <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" required>
+                        <input type="email"  name="email" id="email" placeholder="Tu email" required>
+                        <input type="submit" placeholder="Enviar">
+                    </form>
+                </div>
+                <div id="ver"> <h2>Ver Usuarios</h2>
+                    <p>Actualmente tenemos <strong><%= data %></strong> usuarios registrados en nuestra base de datos </p>
+                    <div id="lista-usuarios">
+                        <ul>
+                            <% for(let i=0; i<lista.length; i++) { %>
+                            <li id="opciones">  <%= lista[i].nombre %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+                <div id="modificar"> <h2>Modificar Usuarios </h2>
+                    <form id="form-modificar">
+                        <input type="text" id="identificador" name="identificador" placeholder="Ingresa el id del usuario que quieras modificar" required>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nuevo nombre" required>
+                        <input type="text" id="apellido" name="apellido" placeholder="Ingresa el nuevo apellido" required>
+                        <input type="email" id="email" name="email" placeholder="Ingresa el nuevo email" required>
+                        <input type="submit" placeholder="Enviar">
+                    </form>
+                </div>
+                <div id="borrar"> <h2> Borrar Usuarios </h2>
+                    <form id="form-borrar">  
+                        <input type="text" id="identificador" name="ident" placeholder="Ingresa el id del usuario que quieras borrar" required>
+                        <input type="submit" placeholder="Enviar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

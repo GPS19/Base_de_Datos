@@ -7,7 +7,7 @@ var connection = mysql.createConnection({ // Creating the connection
   host: "localhost",
   user: "root",
   password: "Starwars19yolo", 
-  database: "usuarios_api"
+  database: "actividad_api"
 });
 
 connection.connect(function(err) { // Verifying we are connected
@@ -17,7 +17,7 @@ connection.connect(function(err) { // Verifying we are connected
 
 
 var data = []
-for(let i = 0; i < 15; i++){
+for(let i = 0; i < 5; i++){
     data.push([faker.name.firstName(), faker.name.lastName(), faker.internet.email()]); // Inserting data with the faker package
 }
 
