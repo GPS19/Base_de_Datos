@@ -201,7 +201,7 @@
                         <input type="text"  name="nombre" id="nombre" placeholder="Ingresa tu nombre" required>
                         <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" required>
                         <input type="email"  name="email" id="email" placeholder="Tu email" required>
-                        <input type="submit" placeholder="Enviar">
+                        <input class="btn" type="submit" placeholder="Enviar">
                     </form>
                 </div>
                 <div id="ver"> <h2>Ver Usuarios</h2>
@@ -209,7 +209,7 @@
                     <div id="lista-usuarios">
                         <ul>
                             <% for(let i=0; i<lista.length; i++) { %>
-                            <li id="opciones">  <%= lista[i].nombre %></li>
+                            <li id="opciones">  <%= `Número de id: ${lista[i].id} \t - Nombre: ${lista[i].nombre} ` %></li>
                             <% } %>
                         </ul>
                     </div>

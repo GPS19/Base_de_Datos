@@ -36,7 +36,7 @@ app.get("/api/home", (req, res)=>{
             console.log("Count is " + count);
             let lista = []; 
             for(let i = 0; i < results[1].length; i++){
-                lista.push({nombre: results[1][i].nombre, apellido: results[1][i].apellido})
+                lista.push({nombre: results[1][i].nombre, id: results[1][i].id})
             }
             res.render(__dirname + "/home.html", {data:count, lista:lista});  
         }
@@ -62,7 +62,7 @@ app.post("/api/home", (req, res)=>{
             var count = results[1][0].count; 
             let lista = []; 
             for(let i = 0; i < results[2].length; i++){
-                lista.push({nombre: results[2][i].nombre, apellido: results[2][i].apellido})
+                lista.push({nombre: results[2][i].nombre, id: results[2][i].id})
             }
             
             res.render(__dirname + "/home.html", {data:count, lista:lista});
@@ -89,7 +89,7 @@ app.put("/api/home", (req, res)=>{
             var count = results[1][0].count;
             let lista = []; 
             for(let i = 0; i < results[2].length; i++){
-                lista.push({nombre: results[2][i].nombre, apellido: results[2][i].apellido})
+                lista.push({nombre: results[2][i].nombre, id: results[2][i].id})
             } 
             res.render(__dirname + "/home.html", {data:count, lista:lista});
         }
@@ -114,7 +114,7 @@ app.delete("/api/home", (req, res)=>{
             var count = results[1][0].count; 
             let lista = []; 
             for(let i = 0; i < results[2].length; i++){
-                lista.push({nombre: results[2][i].nombre, apellido: results[2][i].apellido})
+                lista.push({nombre: results[2][i].nombre, id: results[2][i].id})
             } 
             res.render(__dirname + "/home.html", {data:count, lista:lista});
         }
